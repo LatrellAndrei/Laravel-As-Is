@@ -30,6 +30,11 @@
     <button type="submit" class="btn btn-primary">Submit</button>
     <h6><a href={{"/register"}}>New User? Sign up here.</a></h6>
   </form>
-
+  @if(Session::has('successLogout'))
+  <div class="alert alert-primary" role="alert">
+  {{ Session::get('successLogout') }}
+</div>
+    
+  @endif
   
   @include('partials.footer')

@@ -23,7 +23,7 @@ class UserController extends Controller
         if(auth()->attempt($validated)){
             $req->session()->regenerate();
 
-            return redirect("/");
+            return redirect("/")-> with('success', 'Succesfully Login');
         }
 
 
@@ -54,7 +54,7 @@ class UserController extends Controller
         $req->session()->invalidate();
         $req->session()->regenerateToken();
 
-        return redirect('login');
+        return redirect('login')-> with('successLogout', 'Succesfully Log-Out');
     }
     
     public function delete($id){
