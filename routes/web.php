@@ -22,4 +22,4 @@ Route::get('/register', [UserController::class, 'register']);
 Route::post('/login/process', [UserController::class, 'process']);
 Route::post('/store', [UserController::class, 'store']);
 Route::get('/logout', [UserController::class, 'logout']);
-Route::get('/delete/{id}', [UserController::class, 'delete']);
+Route::get('/delete/{id}', [UserController::class, 'delete'])->middleware('auth');
