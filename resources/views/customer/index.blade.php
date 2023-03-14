@@ -28,11 +28,7 @@
       <td>{{$customer->email}}</td>
       <td>{{$customer->address}}</td>
       <td><a href="#">Edit</a></td>
-      <td>
-          <form action="delete/{{$customer->id}}">
-            <button type="submit" class="btn btn-danger">Delete</button>
-          </form>
-        </td>      
+      <td><a href="delete/{{$customer->id}}">Delete</a></td>
     </tr>
   </tbody>
   @endforeach
