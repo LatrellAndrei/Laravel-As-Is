@@ -16,7 +16,10 @@
     </tr>
   </thead>
   @if(Session::has('success'))
-    {{ Session::get('success') }}
+  <div class="alert alert-primary" role="alert">
+  {{ Session::get('success') }}
+</div>
+    
   @endif
   @foreach($customers as $customer)
      
@@ -29,6 +32,7 @@
       <td>{{$customer->address}}</td>
       <td><a href="#">Edit</a></td>
       <td><a href="delete/{{$customer->id}}">Delete</a></td>
+    
     </tr>
   </tbody>
   @endforeach
