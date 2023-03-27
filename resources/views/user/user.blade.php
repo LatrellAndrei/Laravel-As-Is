@@ -1,13 +1,12 @@
-
 @include('partials.header')
 <x-nav/>
-<table class="table table-hover">
-  <thead>
+<table class="table">
+    <thead>
     <tr>
       <th scope="col">ID</th>
       <th scope="col">Last Name</th>
       <th scope="col">First Name</th>
-      <th scope="col">EMail</th>
+      <th scope="col">Email</th>
       <th scope="col">Address</th>
       <th></th>
       <th>
@@ -21,17 +20,17 @@
 </div>
     
   @endif
-  @foreach($customers as $customer)
+  @foreach($users as $user)
      
   <tbody>
     <tr>
-      <th scope="row">{{$customer->id}}</th>
-      <td>{{$customer->lastName}}</td>
-      <td>{{$customer->firstName}}</td>
-      <td>{{$customer->email}}</td>
-      <td>{{$customer->address}}</td>
-      <td><a href="edit/{{$customer->id}}" class="text-info-emphasis">Edit</a></td>
-      <td><a href="delete/{{$customer->id}}">Delete</a></td>
+      <th scope="row">{{$user->id}}</th>
+  
+      <td>{{$user->name}}</td>
+      <td>{{$user->email}}</td>
+ 
+      <td><a href="#" class="text-info-emphasis">Edit</a></td>
+      <td><a href="delete/{{$user->id}}" class="text-danger">DELETE</a></td>
     
     </tr>
   </tbody>

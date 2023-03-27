@@ -15,7 +15,12 @@ use App\Http\Controllers\UserController;
 */
 
 Route::get('/', [CustomerController::class, 'index'])->middleware('auth');
+Route::get('/addCustomer',[CustomerController::class, 'addCustomer'])->middleware('auth');
+Route::post('/saveCustomer', [CustomerController::class, 'saveCustomer']);
+Route::get('/edit/{id}', [CustomerController::class, 'edit'])->middleware('auth');
+Route::post('updateCustomer', [CustomerController::class, 'updateCustomer'])->middleware('auth');
 
+Route::get('/user', [UserController::class, 'user'])->middleware('auth');
 Route::get('/login', [UserController::class, 'login'])->name('login')->middleware('guest');
 Route::get('/register', [UserController::class, 'register']);
 

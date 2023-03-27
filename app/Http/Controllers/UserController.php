@@ -6,10 +6,18 @@ use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
-
 use App\Models\User;
+
 class UserController extends Controller
 {
+
+    public function user()
+    {
+        $data = DB::table("users")->get();
+        return view('user.user',['users'=>$data]);
+    } 
+
+
     public function login(){
         return view ('user.login');
     }
