@@ -1,5 +1,5 @@
 <footer>
-   All Rights Reserved Hyatt Regency. Copyright 2023 
+   All Rights Reserved Spotify PH. Copyright 2023 
   </footer>  
   </div>
 

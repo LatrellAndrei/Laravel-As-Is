@@ -1,9 +1,12 @@
 <?php
-
 namespace App\Http\Controllers;
-use App\Models\Customer;
+
 use Illuminate\Http\Request;
+use App\Models\Customer;
+use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
+
 
 class CustomerController extends Controller
 {
@@ -23,7 +26,8 @@ class CustomerController extends Controller
         $validated=$req->validate([
             "lastName"=>['required','min:4'],
             "firstName"=>['required','min:4'],
-            "email"=>['required','min:4'],
+            "email"=>['required','email',
+            Rule::unique('users','email'),],
             "contactNumber"=>['required','min:4'],
             "address"=>['required','min:4'],
            
@@ -32,21 +36,22 @@ class CustomerController extends Controller
         //dd($validated);
         $data=Customer::create($validated);
 
-        return redirect("/")->with('success', 'A record has been added!');
+        return redirect("/")->with('success', 'A New record has been added!');
     
     }
 
     public function edit($id){
        $data=Customer::findOrFail($id);
        return view('customer.edit',['customer'=>$data]);
-       return redirect('/')-> with('success', 'A record has been edited successfully!');
+       return redirect('/')-> with('success', 'A Customer Record has been edited successfully!');
     }
 
     public function updateCustomer(Request $req){
         $req->validate([
-            "lastName"=>['required','min:3'],
+            "lastName"=>['required','min:4'],
             "firstName"=>['required','min:4'],
-            "email"=>['required','min:4'],
+            "email"=>['required','email',
+            Rule::unique('users','email'),],
             "contactNumber"=>['required','min:4'],
             "address"=>['required','min:4'],
         ]);
@@ -58,7 +63,7 @@ class CustomerController extends Controller
             $data->address=$req->address;
 
             $data->save();
-            return redirect('/')-> with('success', 'A record has been edited successfully!');
+            return redirect('/')-> with('success', 'A Customer Record has been edited successfully!');
 
 
         

@@ -1,13 +1,13 @@
 
 @include('partials.header')
 <x-nav/>
-<table class="table table-hover">
+<table class="table table-info table-striped">
   <thead>
     <tr>
       <th scope="col">ID</th>
       <th scope="col">Last Name</th>
       <th scope="col">First Name</th>
-      <th scope="col">EMail</th>
+      <th scope="col">Email</th>
       <th scope="col">Address</th>
       <th></th>
       <th>
@@ -16,7 +16,7 @@
     </tr>
   </thead>
   @if(Session::has('success'))
-  <div class="alert alert-warning" role="alert">
+  <div class="alert alert-danger" role="alert">
   {{ Session::get('success') }}
 </div>
     
@@ -30,8 +30,8 @@
       <td>{{$customer->firstName}}</td>
       <td>{{$customer->email}}</td>
       <td>{{$customer->address}}</td>
-      <td><a href="edit/{{$customer->id}}" class="text-info-emphasis">Edit</a></td>
-      <td><a href="delete/{{$customer->id}}">Delete</a></td>
+      <td><a href="edit/{{$customer->id}}" class="btn btn-primary">Edit</a></td>
+      <td><a href="delete/{{$customer->id}}" class="btn btn-danger">Delete</a></td>
     
     </tr>
   </tbody>

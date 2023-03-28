@@ -1,7 +1,7 @@
 @include('partials.header')
-<center> <img src="mickey.png" alt=""> </center>
 
-<h5>EDIT RECORD</h5>
+
+<h5>Edit Record</h5>
 <form action="/updateCustomer" method="POST">
     @csrf
     
@@ -66,5 +66,5 @@
     
        
 
-    <button type="submit" class="btn btn-dark mb-3">Submit</button>
+    <button type="submit" class="btn btn-info">Submit</button>
   </form>

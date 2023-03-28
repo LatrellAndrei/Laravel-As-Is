@@ -1,7 +1,7 @@
 @include('partials.header')
-<center> <img src="mickey.png" alt=""> </center>
+ <center><img src="spotifylogo.jpg" width="250" height="150" > </center>
 
-<h5>FILL THE FORMS TO ADD A NEW RECORD</h5>
+<h5>Fill the forms to add a new record</h5>
 <form action="/saveCustomer" method="POST">
     @csrf
     
@@ -65,5 +65,5 @@
     
        
 
-    <button type="submit" class="btn btn-dark mb-3">Submit</button>
+    <button type="submit" class="btn btn-info">Submit</button>
   </form>
