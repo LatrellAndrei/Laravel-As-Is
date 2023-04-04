@@ -5,7 +5,7 @@
     <tr>
       <th scope="col">ID</th>
       <th scope="col">Product Name</th>
-      <th scope="col">Quantity</th>
+      <th scope="col">Quant ity</th>
       <th scope="col">Price</th>
       <th>
 

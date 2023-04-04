@@ -30,7 +30,7 @@
 
 
     <div class="mb-3">
-      <label for="prodPrice" class="form-label">Prod Price</label>
+      <label for="prodPrice" class="form-label">Product Price</label>
       <input 
       type="text" 
       class="form-control" 

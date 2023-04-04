@@ -4,10 +4,8 @@
     <thead>
     <tr>
       <th scope="col">ID</th>
-      <th scope="col">Last Name</th>
-      <th scope="col">First Name</th>
+      <th scope="col">Full Name</th>
       <th scope="col">Email</th>
-      <th scope="col">Address</th>
       <th></th>
       <th>
 
@@ -30,7 +28,7 @@
       <td>{{$user->email}}</td>
  
       <td><a href="#" class="text-info-emphasis">Edit</a></td>
-      <td><a href="delete/{{$user->id}}" class="text-danger">DELETE</a></td>
+      <td><a href="delete/{{$user->id}}" class="text-danger">Delete</a></td>
     
     </tr>
   </tbody>
