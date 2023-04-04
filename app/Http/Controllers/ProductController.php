@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Requests\StoreproductRequest;
 use App\Http\Requests\UpdateproductRequest;
 
@@ -18,61 +19,34 @@ class ProductController extends Controller
         return view('product.product',['products'=>$data]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(StoreproductRequest $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(product $product)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit($id)
-    {
-        $data = Product::find($id);
-        return view('product.pedit',compact('data'));
-    }
+    
+   
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        $data = Product::find($id);
+       
+        $data=Product::find($request->id);
         $data->prodName = $request->input('prodName');
         $data->prodQuantity = $request->input('prodQuantity');
         $data->prodPrice = $request->input('prodPrice');
         $data->save();
 
-        return redirect('/product')->with('prod_edit', 'Product Updated Successfully');
+        return redirect('/')->with('success', 'Product Updated Successfully');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy($id)
-    {
-        $product = Product::find($id);
-        $product->delete();
-
-        return redirect('/product')->with('prod_del', 'Product Deleted Successfully');
+    public function edit($id){
+        $data=Product::findOrFail($id);
+        return view('product.pedit',['product'=>$data]);
+        return redirect('/')-> with('success', 'A Product Record has been edited successfully!');
+     }
+   
+    public function delete($id){
+        $delete = DB::table('products')
+        ->where('id', $id)
+        ->delete();
+        return redirect('/')-> with('success', 'Product Deleted');
     }
 }

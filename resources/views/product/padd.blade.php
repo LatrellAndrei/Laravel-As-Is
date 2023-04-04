@@ -1,7 +1,7 @@
 @include('partials.header')
  <center><img src="spotifylogo.jpg" width="250" height="150" > </center>
 
-<h5>Fill the forms to add a new record</h5>
+<h5>Fill the forms to add a new product</h5>
 <form action="/saveCustomer" method="POST">
     @csrf
     

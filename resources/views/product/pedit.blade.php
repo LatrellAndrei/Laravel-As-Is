@@ -1,11 +1,11 @@
 @include('partials.header')
 
 
-<h5>Edit Record</h5>
-<form action="/updateCustomer" method="POST">
+<h5>Edit Product</h5>
+<form action="/update" method="POST">
     @csrf
     
-    <input type="hidden" id="id" name="id" value="{{$customer->id}}"> 
+    <input type="hidden" id="id" name="id" value="{{$product->id}}"> 
  
 <div class="mb-3">
       <label for="prodName" class="form-label">Product Name</label>
