@@ -11,6 +11,10 @@
     </li>
 
     <li class="nav-item">
+      <a class="nav-link" href={{"/product"}}>Product</a>
+    </li>
+
+    <li class="nav-item">
       <a class="nav-link" href={{"/addCustomer"}}>Add User</a>
     </li>
 

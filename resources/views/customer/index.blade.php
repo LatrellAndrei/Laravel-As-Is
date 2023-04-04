@@ -1,4 +1,3 @@
-
 @include('partials.header')
 <x-nav/>
 <table class="table table-info table-striped">

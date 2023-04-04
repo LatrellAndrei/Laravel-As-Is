@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,3 +29,4 @@ Route::post('/login/process', [UserController::class, 'process']);
 Route::post('/store', [UserController::class, 'store']);
 Route::get('/logout', [UserController::class, 'logout']);
 Route::get('/delete/{id}', [UserController::class, 'delete'])->middleware('auth');
+Route::get('/product', [ProductController::class, 'index']);
