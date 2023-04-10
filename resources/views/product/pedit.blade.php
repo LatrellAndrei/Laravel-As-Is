@@ -47,4 +47,5 @@
        
 
     <button type="submit" class="btn btn-info">Submit</button>
+    <a href={{"/product"}} class="btn btn-info">Back</a>
   </form>

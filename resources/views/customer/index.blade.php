@@ -9,9 +9,7 @@
       <th scope="col">Email</th>
       <th scope="col">Address</th>
       <th></th>
-      <th>
-
-      </th>
+      <th></th>
     </tr>
   </thead>
   @if(Session::has('success'))

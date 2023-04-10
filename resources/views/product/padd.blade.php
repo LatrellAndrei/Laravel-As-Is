@@ -2,7 +2,7 @@
  <center><img src="spotifylogo.jpg" width="250" height="150" > </center>
 
 <h5>Fill the forms to add a new product</h5>
-<form action="/saveCustomer" method="POST">
+<form action="/saveProduct" method="POST">
     @csrf
     
  
@@ -12,8 +12,8 @@
       type="text" 
       class="form-control" 
       aria-describedby="emailHelp"
-      value="{{$product->prodName}}"
       name="prodName">
+    
     </div>
 
 
@@ -23,8 +23,8 @@
       type="text" 
       class="form-control" 
       aria-describedby="emailHelp"
-      name="prodQuantity"
-      value="{{$product->prodQuantity}}">
+      name="prodQuantity">
+    
     </div>
 
 
@@ -36,11 +36,12 @@
       class="form-control" 
       id="exampleInputEmail1" 
       aria-describedby="emailHelp"
-      name="prodPrice"
-      value="{{$product->prodPrice}}">
+      name="prodPrice">
+      
     </div>
 
        
 
     <button type="submit" class="btn btn-info">Submit</button>
+    <a href={{"/product"}} class="btn btn-info">Back</a>
   </form>

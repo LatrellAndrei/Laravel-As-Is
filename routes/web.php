@@ -33,3 +33,5 @@ Route::get('/delete/{id}', [UserController::class, 'delete'])->middleware('auth'
 Route::get('/product', [ProductController::class, 'index']);
 Route::get('/delete/{id}', [ProductController::class, 'delete'])->middleware('auth');
 Route::get('/edit/{id}', [ProductController::class, 'edit'])->middleware('auth');
+Route::get('/addProduct', [ProductController::class, 'addProduct'])->middleware('auth');
+Route::post('/saveProduct', [ProductController::class, 'saveProduct']);

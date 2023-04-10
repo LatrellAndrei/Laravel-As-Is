@@ -7,9 +7,8 @@
       <th scope="col">Product </th>
       <th scope="col">Quantity</th>
       <th scope="col">Price</th>
-      <th>
-
-      </th>
+      <th></th>
+      <th></th>
     </tr>
   </thead>
   @if(Session::has('success'))

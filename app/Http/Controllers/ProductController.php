@@ -49,4 +49,19 @@ class ProductController extends Controller
         ->delete();
         return redirect('/')-> with('success', 'Product Deleted');
     }
+
+    public function addProduct(){
+        return view('product.padd');
+    }
+    public function saveProduct(Request $req){
+        
+        $validated=$req->validate([
+            "prodName"=>['required'],
+            "prodQuantity"=>['required'],
+            "prodPrice"=>['required'],
+        ]);
+        $data=Product::create($validated);
+        return redirect("/product")->with('success', 'A New product has been added!');
+
+    }
 }
